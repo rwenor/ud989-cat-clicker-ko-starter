@@ -22,7 +22,7 @@ var ViewModel = function() {
 
   this.currentCat = ko.observable( new Cat() );
   this.incCounter = function() {
-    this.currentCat().clickCnt( this.currentCat().clickCnt() + 1);
+    this.clickCnt( this.clickCnt() + 1);
   };
 
 };
