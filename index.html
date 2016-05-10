@@ -9,16 +9,16 @@
 
     <div id="cat">
 
-        <h2 data-bind="text: name"></h2>
-        <div data-bind="text: clickCnt"></div>
-        <div data-bind="text: level"></div>
-        <div data-bind="text: callName"></div>
+        <h2 data-bind="text: currentCat().name"></h2>
+        <div data-bind="text: currentCat().clickCnt"></div>
+        <div data-bind="text: currentCat().level"></div>
+        <div data-bind="text: currentCat().callName"></div>
 
         <table>
             <thead>
                 <tr><th>name</th><th>type</th></tr>
             </thead>
-            <tbody data-bind="foreach: callName">
+            <tbody data-bind="foreach: currentCat().callName">
                 <tr>
                     <td data-bind="text: name"></td>
                     <td data-bind="text: type"></td>
@@ -26,7 +26,7 @@
             </tbody>
         </table>
 
-        <img src="" alt="cute cat" data-bind="click: incCounter, attr: {src: imgSrc}">
+        <img src="" alt="cute cat" data-bind="click: incCounter, attr: {src: currentCat().imgSrc}">
 
     </div>
     <script src="js/lib/knockout-3.2.0.js"></script>
